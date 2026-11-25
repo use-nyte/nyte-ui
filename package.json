@@ -8,7 +8,7 @@
     "build": "pnpm -r run build && pnpm run storybook:build",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build --output-dir .generated/storybook",
-    "typecheck": "pnpm -r run typecheck",
+    "typecheck": "pnpm --filter @use-nyte/ui-core run build && pnpm -r run typecheck",
     "test": "pnpm -r run test",
     "lint": "pnpm exec lint",
     "lint:fix": "pnpm exec lint --fix",
