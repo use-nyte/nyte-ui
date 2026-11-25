@@ -1,0 +1,136 @@
+name: Release UI Packages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: ui-releases
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Release UI Packages
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Generate Nyte Automation token
+        id: app
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.NYTE_AUTOMATION_CLIENT_ID }}
+          private-key: ${{ secrets.NYTE_AUTOMATION_PRIVATE_KEY }}
+          owner: use-nyte
+          repositories: nyte-ui
+          permission-contents: write
+          permission-pull-requests: write
+          permission-issues: write
+
+      - name: Run Release Please
+        id: release
+        uses: googleapis/release-please-action@v5.0.0
+        with:
+          token: ${{ steps.app.outputs.token }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+      - name: Checkout repository
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Setup pnpm
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+        uses: pnpm/action-setup@v6
+
+      - name: Setup Node.js
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+          registry-url: https://npm.pkg.github.com/
+          scope: "@use-nyte"
+
+      - name: Install dependencies
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+        run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
+
+      - name: Build UI Core
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+        run: pnpm --filter @use-nyte/ui-core run build
+
+      - name: Build UI Web
+        if: ${{ steps.release.outputs['packages/web--release_created'] == 'true' }}
+        run: pnpm --filter @use-nyte/ui-web run build
+
+      - name: Publish UI Core
+        if: ${{ steps.release.outputs['packages/core--release_created'] == 'true' }}
+        working-directory: packages/core
+        run: pnpm publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
+
+      - name: Verify UI Core for Web
+        if: ${{ steps.release.outputs['packages/web--release_created'] == 'true' }}
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
+        run: |
+          version=$(node -p "require('./packages/core/package.json').version")
+          for attempt in 1 2 3 4 5 6; do
+            if npm view "@use-nyte/ui-core@$version" version \
+              --registry=https://npm.pkg.github.com/ >/dev/null 2>&1; then
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "::error::UI Core $version is not published"
+          exit 1
+
+      - name: Publish UI Web
+        if: ${{ steps.release.outputs['packages/web--release_created'] == 'true' }}
+        working-directory: packages/web
+        run: pnpm publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
+
+      - name: Verify Entry Point Dependencies
+        if: ${{ steps.release.outputs['packages/entry--release_created'] == 'true' }}
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
+        run: |
+          for component in core web; do
+            version=$(node -p "require('./packages/$component/package.json').version")
+            found=false
+
+            for attempt in 1 2 3 4 5 6; do
+              if npm view "@use-nyte/ui-$component@$version" version \
+                --registry=https://npm.pkg.github.com/ >/dev/null 2>&1; then
+                found=true
+                break
+              fi
+              sleep 10
+            done
+
+            if [ "$found" != true ]; then
+              echo "::error::UI $component $version is not published"
+              exit 1
+            fi
+          done
+
+      - name: Publish UI Entry Point
+        if: ${{ steps.release.outputs['packages/entry--release_created'] == 'true' }}
+        working-directory: packages/entry
+        run: pnpm publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ github.token }}
