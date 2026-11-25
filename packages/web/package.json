@@ -1,6 +1,6 @@
 {
   "name": "@use-nyte/ui-web",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "license": "Apache-2.0",
   "repository": "https://github.com/use-nyte/nyte-ui",
