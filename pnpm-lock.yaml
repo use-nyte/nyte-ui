@@ -196,6 +196,15 @@ importers:
 
   packages/core: {}
 
+  packages/entry:
+    devDependencies:
+      '@use-nyte/ui-core':
+        specifier: workspace:*
+        version: link:../core
+      '@use-nyte/ui-web':
+        specifier: workspace:*
+        version: link:../web
+
   packages/web:
     dependencies:
       '@use-nyte/ui-core':

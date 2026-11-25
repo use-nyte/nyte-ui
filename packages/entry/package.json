@@ -1,0 +1,39 @@
+{
+  "name": "@use-nyte/nyte-ui",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/use-nyte/nyte-ui",
+  "files": [
+    "src"
+  ],
+  "exports": {
+    "./core": {
+      "types": "./src/core.d.ts",
+      "import": "./src/core.js"
+    },
+    "./web": {
+      "types": "./src/web.d.ts",
+      "import": "./src/web.js"
+    }
+  },
+  "peerDependencies": {
+    "@use-nyte/ui-core": "*",
+    "@use-nyte/ui-web": "*"
+  },
+  "peerDependenciesMeta": {
+    "@use-nyte/ui-core": {
+      "optional": true
+    },
+    "@use-nyte/ui-web": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@use-nyte/ui-core": "workspace:*",
+    "@use-nyte/ui-web": "workspace:*"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}

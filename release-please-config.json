@@ -5,10 +5,13 @@
   "separate-pull-requests": false,
   "packages": {
     "packages/core": {
-      "component": "ui-core"
+      "component": "core"
     },
     "packages/web": {
-      "component": "ui-web"
+      "component": "web"
+    },
+    "packages/entry": {
+      "component": "nyte-ui"
     }
   }
 }
