@@ -1,0 +1,21 @@
+{
+  "name": "@use-nyte/nyte-ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.18.0",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "typecheck": "pnpm -r run typecheck",
+    "test": "pnpm -r run test",
+    "lint": "pnpm exec lint",
+    "lint:fix": "pnpm exec lint --fix",
+    "format": "pnpm exec format",
+    "format:write": "pnpm exec format --write"
+  },
+  "devDependencies": {
+    "@use-nyte/eslint-config": "^2.0.2",
+    "@use-nyte/prettier-config": "^2.0.2",
+    "typescript": "^6.0.3"
+  }
+}
