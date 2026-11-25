@@ -6,7 +6,7 @@
   "packageManager": "pnpm@12.18.0",
   "scripts": {
     "build": "pnpm -r run build && pnpm run storybook:build",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev",
     "storybook:build": "storybook build --output-dir .generated/storybook",
     "typecheck": "pnpm --filter @use-nyte/ui-core run build && pnpm -r run typecheck",
     "test": "pnpm -r run test",
