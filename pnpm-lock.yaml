@@ -173,8 +173,8 @@ importers:
         specifier: ^2.0.3
         version: 2.0.3(prettier@3.10.1)(typescript@6.0.3)
       '@use-nyte/prettier-config':
-        specifier: ^2.0.2
-        version: 2.0.2(typescript@6.0.3)
+        specifier: ^2.0.3
+        version: 2.0.3(typescript@6.0.3)
       solid-js:
         specifier: ^1.9.20
         version: 1.9.20
@@ -1228,8 +1228,8 @@ packages:
     resolution: {integrity: sha512-1jrSMQg3wJqI8lLhpmdnvSdxV+ryJHsIVc0jBKjOngnn5cvvOFIyt3k01REJ67kwxVmnf0v/hTdUOKMenkM/lA==, tarball: https://npm.pkg.github.com/download/@use-nyte/eslint-config/2.0.3/5dee724d64d5199371a318a4da15e88b1c263578}
     hasBin: true
 
-  '@use-nyte/prettier-config@2.0.2':
-    resolution: {integrity: sha512-+biM86rFRMN2cfYsVK0KO8CLGVPFSnLvQ/aiX20Bl0HJi64rOY7Dy5WN+U5Et89eJW+b6zTnLC0gGs/Bqi+eCQ==, tarball: https://npm.pkg.github.com/download/@use-nyte/prettier-config/2.0.2/d6b10fa355f6bdf40626cf9d713364ccb5c5ffb9}
+  '@use-nyte/prettier-config@2.0.3':
+    resolution: {integrity: sha512-CP9BCTdxmXgQ6xnGbV4ekKwR2Od6HVEytGNhTjmo1lBqieTq2jZK9ZjKYKAlxxvrfEMbsb5XNQijXOnJDM20zQ==, tarball: https://npm.pkg.github.com/download/@use-nyte/prettier-config/2.0.3/d915e9479461eb597e460855d304b62acb2089c9}
     hasBin: true
 
   '@vitest/expect@3.2.4':
@@ -3595,7 +3595,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@use-nyte/prettier-config@2.0.2(typescript@6.0.3)':
+  '@use-nyte/prettier-config@2.0.3(typescript@6.0.3)':
     dependencies:
       ignore: 5.3.2
       prettier: 3.10.1
