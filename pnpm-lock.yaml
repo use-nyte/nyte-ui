@@ -170,8 +170,8 @@ importers:
         specifier: ^10.6.8
         version: 10.6.8(@types/react@19.3.0)(storybook@10.6.8(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))
       '@use-nyte/eslint-config':
-        specifier: ^2.0.2
-        version: 2.0.2(prettier@3.10.1)(typescript@6.0.3)
+        specifier: ^2.0.3
+        version: 2.0.3(prettier@3.10.1)(typescript@6.0.3)
       '@use-nyte/prettier-config':
         specifier: ^2.0.2
         version: 2.0.2(typescript@6.0.3)
@@ -1215,8 +1215,8 @@ packages:
     resolution: {integrity: sha512-mbCddXd+jm7hfx7w2YU64/Av4/NqqeG3GoRZgxPcgoTxYjhrcfJRw9ULch71SS4G+Q3bOXFhRvPqjguN0Hyp5w==}
     hasBin: true
 
-  '@use-nyte/eslint-config@2.0.2':
-    resolution: {integrity: sha512-5pJgtuuv9X6+308jYhVhaLCwjJNjcgUrZfSp4k4y5b7qyIU3PduGE6IVn6lYRPq54d3BZeWRMdzazm7rUr4Fuw==, tarball: https://npm.pkg.github.com/download/@use-nyte/eslint-config/2.0.2/494a3ce666c22e767911c8c19f8aaa48b75635df}
+  '@use-nyte/eslint-config@2.0.3':
+    resolution: {integrity: sha512-1jrSMQg3wJqI8lLhpmdnvSdxV+ryJHsIVc0jBKjOngnn5cvvOFIyt3k01REJ67kwxVmnf0v/hTdUOKMenkM/lA==, tarball: https://npm.pkg.github.com/download/@use-nyte/eslint-config/2.0.3/5dee724d64d5199371a318a4da15e88b1c263578}
     hasBin: true
 
   '@use-nyte/prettier-config@2.0.2':
@@ -3569,7 +3569,7 @@ snapshots:
     dependencies:
       '@typescript/old': typescript@6.0.3
 
-  '@use-nyte/eslint-config@2.0.2(prettier@3.10.1)(typescript@6.0.3)':
+  '@use-nyte/eslint-config@2.0.3(prettier@3.10.1)(typescript@6.0.3)':
     dependencies:
       '@eslint/js': 10.0.1(eslint@10.15.0)
       eslint: 10.15.0
