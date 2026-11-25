@@ -5,7 +5,9 @@
   "type": "module",
   "packageManager": "pnpm@12.18.0",
   "scripts": {
-    "build": "pnpm -r run build",
+    "build": "pnpm -r run build && pnpm run storybook:build",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build --output-dir .generated/storybook",
     "typecheck": "pnpm -r run typecheck",
     "test": "pnpm -r run test",
     "lint": "pnpm exec lint",
@@ -14,8 +16,14 @@
     "format:write": "pnpm exec format --write"
   },
   "devDependencies": {
+    "@storybook/addon-docs": "^10.6.8",
     "@use-nyte/eslint-config": "^2.0.2",
     "@use-nyte/prettier-config": "^2.0.2",
-    "typescript": "^6.0.3"
+    "solid-js": "^1.9.20",
+    "storybook": "^10.6.8",
+    "storybook-solidjs-vite": "^10.7.4",
+    "typescript": "^6.0.3",
+    "vite": "^7.3.8",
+    "vite-plugin-solid": "^2.11.17"
   }
 }

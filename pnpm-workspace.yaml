@@ -1,5 +1,7 @@
 packages:
   - packages/*
+allowBuilds:
+  esbuild: true
 minimumReleaseAgeExclude:
   - '@use-nyte/eslint-config@2.0.2'
   - '@use-nyte/prettier-config@2.0.2'
