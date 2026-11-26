@@ -1,10 +1,10 @@
 name: Release UI Packages
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+  workflow_call:
+    secrets:
+      NYTE_AUTOMATION_PRIVATE_KEY:
+        required: true
 
 permissions:
   contents: read
