@@ -192,8 +192,8 @@ importers:
         specifier: 4.3.5
         version: 4.3.5(vite@8.4.0(esbuild@0.28.2)(jiti@2.7.0))
       '@use-nyte/eslint-config':
-        specifier: 2.1.0
-        version: 2.1.0(jiti@2.7.0)(prettier@3.10.1)(typescript@6.0.3)
+        specifier: 2.1.1
+        version: 2.1.1(jiti@2.7.0)(prettier@3.10.1)(typescript@6.0.3)
       '@use-nyte/prettier-config':
         specifier: 2.0.5
         version: 2.0.5(typescript@6.0.3)
@@ -1306,8 +1306,9 @@ packages:
     resolution: {integrity: sha512-mbCddXd+jm7hfx7w2YU64/Av4/NqqeG3GoRZgxPcgoTxYjhrcfJRw9ULch71SS4G+Q3bOXFhRvPqjguN0Hyp5w==}
     hasBin: true
 
-  '@use-nyte/eslint-config@2.1.0':
-    resolution: {integrity: sha512-KXzpil2eCH6MuiluX3vEof6jODUMnL47Yv1l7FLPGyr1SXlGaxvJG8DZ6LltfoWOFz2NBlzjrX1BsnjE9IMXjw==, tarball: https://npm.pkg.github.com/download/@use-nyte/eslint-config/2.1.0/e5642781d8659af352b5d2e46e07f4b2a7c706eb}
+  '@use-nyte/eslint-config@2.1.1':
+    resolution: {integrity: sha512-8lHQzZH7nmTkuAfCZ5pYceZ7FSkC/G5yNHulHjYYSDvdGZJRkMlNAx3WRM8h0ep4b3K9ZENOpOSeqH07GC3mKA==, tarball: https://npm.pkg.github.com/download/@use-nyte/eslint-config/2.1.1/75ebca449a651052aeed9d56b06473ed8e31463a}
+    engines: {node: 26.13.1}
     hasBin: true
 
   '@use-nyte/prettier-config@2.0.5':
@@ -1692,10 +1693,6 @@ packages:
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
-    engines: {node: '>= 4'}
-
-  ignore@7.0.16:
-    resolution: {integrity: sha512-52N+Y4HRMOJmbLmr+DqO4iSRyyB7N52gm7PWCT6h0p978+oKbqHCB7gIJIwZvBUsjlSdWbrBFqUSmIFNZMpn0A==}
     engines: {node: '>= 4'}
 
   ignore@7.0.17:
@@ -3285,7 +3282,7 @@ snapshots:
       '@typescript-eslint/utils': 8.74.0(eslint@10.15.0(jiti@2.7.0))(typescript@6.0.3)
       '@typescript-eslint/visitor-keys': 8.74.0
       eslint: 10.15.0(jiti@2.7.0)
-      ignore: 7.0.16
+      ignore: 7.0.17
       natural-compare: 1.4.0
       ts-api-utils: 2.5.0(typescript@6.0.3)
       typescript: 6.0.3
@@ -3375,7 +3372,7 @@ snapshots:
     dependencies:
       '@typescript/old': typescript@6.0.3
 
-  '@use-nyte/eslint-config@2.1.0(jiti@2.7.0)(prettier@3.10.1)(typescript@6.0.3)':
+  '@use-nyte/eslint-config@2.1.1(jiti@2.7.0)(prettier@3.10.1)(typescript@6.0.3)':
     dependencies:
       '@eslint/js': 10.0.1(eslint@10.15.0(jiti@2.7.0))
       eslint: 10.15.0(jiti@2.7.0)
@@ -3807,8 +3804,6 @@ snapshots:
   html-tags@3.3.1: {}
 
   ignore@5.3.2: {}
-
-  ignore@7.0.16: {}
 
   ignore@7.0.17: {}
 
