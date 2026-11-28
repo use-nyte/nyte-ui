@@ -19,7 +19,7 @@
     "format:write": "pnpm exec format --write"
   },
   "devDependencies": {
-    "@storybook/addon-docs": "10.6.8",
+    "@storybook/addon-docs": "10.6.9",
     "@tailwindcss/vite": "4.3.5",
     "@use-nyte/eslint-config": "2.1.0",
     "@use-nyte/prettier-config": "2.0.5",
