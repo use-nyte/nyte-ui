@@ -22,7 +22,7 @@
     "@storybook/addon-docs": "10.6.8",
     "@tailwindcss/vite": "4.3.5",
     "@use-nyte/eslint-config": "2.1.0",
-    "@use-nyte/prettier-config": "2.0.4",
+    "@use-nyte/prettier-config": "2.0.5",
     "solid-js": "1.9.20",
     "storybook": "10.6.9",
     "storybook-solidjs-vite": "10.7.4",
