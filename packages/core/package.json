@@ -18,6 +18,9 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "node --test tests/*.test.ts"
   },
+  "engines": {
+    "node": "26.13.0"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   }

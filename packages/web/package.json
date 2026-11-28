@@ -21,7 +21,10 @@
     "@use-nyte/ui-core": "workspace:*"
   },
   "peerDependencies": {
-    "solid-js": "^1.9.0"
+    "solid-js": "1.9.20"
+  },
+  "engines": {
+    "node": "26.13.0"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

@@ -167,37 +167,37 @@ importers:
   .:
     devDependencies:
       '@storybook/addon-docs':
-        specifier: ^10.6.8
+        specifier: 10.6.8
         version: 10.6.8(@types/react@19.3.0)(storybook@10.6.8(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))
       '@tailwindcss/vite':
-        specifier: ^4.3.5
+        specifier: 4.3.5
         version: 4.3.5(vite@7.3.8(jiti@2.7.0)(lightningcss@1.33.0))
       '@use-nyte/eslint-config':
-        specifier: ^2.1.0
+        specifier: 2.1.0
         version: 2.1.0(jiti@2.7.0)(prettier@3.10.1)(typescript@6.0.3)
       '@use-nyte/prettier-config':
-        specifier: ^2.0.4
+        specifier: 2.0.4
         version: 2.0.4(typescript@6.0.3)
       solid-js:
-        specifier: ^1.9.20
+        specifier: 1.9.20
         version: 1.9.20
       storybook:
-        specifier: ^10.6.8
+        specifier: 10.6.8
         version: 10.6.8(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1)
       storybook-solidjs-vite:
-        specifier: ^10.7.4
+        specifier: 10.7.4
         version: 10.7.4(solid-js@1.9.20)(storybook@10.6.8(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))(typescript@6.0.3)(vite-plugin-solid@2.11.17(@testing-library/jest-dom@6.9.1)(solid-js@1.9.20)(vite@7.3.8(jiti@2.7.0)(lightningcss@1.33.0)))(vite@7.3.8(jiti@2.7.0)(lightningcss@1.33.0))
       tailwindcss:
-        specifier: ^4.3.5
+        specifier: 4.3.5
         version: 4.3.5
       typescript:
-        specifier: ^6.0.3
+        specifier: 6.0.3
         version: 6.0.3
       vite:
-        specifier: ^7.3.8
+        specifier: 7.3.8
         version: 7.3.8(jiti@2.7.0)(lightningcss@1.33.0)
       vite-plugin-solid:
-        specifier: ^2.11.17
+        specifier: 2.11.17
         version: 2.11.17(@testing-library/jest-dom@6.9.1)(solid-js@1.9.20)(vite@7.3.8(jiti@2.7.0)(lightningcss@1.33.0))
 
   packages/core: {}
@@ -217,7 +217,7 @@ importers:
         specifier: workspace:*
         version: link:../core
       solid-js:
-        specifier: ^1.9.0
+        specifier: 1.9.20
         version: 1.9.20
 
 packages:
